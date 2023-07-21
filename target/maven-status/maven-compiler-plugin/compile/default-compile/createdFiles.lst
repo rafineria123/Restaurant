@@ -1,0 +1,9 @@
+service\exception\NoFoodFoundException.class
+service\impl\MenuExample.class
+domain\eto\Meal.class
+domain\ProductType.class
+service\impl\MenuServiceImpl.class
+Restaurant.class
+domain\eto\Produce.class
+service\api\MenuService.class
+domain\DietType.class
