@@ -20,16 +20,10 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public List<Meal> findFoodByType(List<Meal> meals, DietType diet) {
         if (meals == null || diet == null) return Collections.emptyList();
-        if (diet.equals(DietType.VEGETARIAN)) {
-            return meals.stream()
-                    .filter(Objects::nonNull)
-                    .filter(meal -> meal.getDietType() == DietType.VEGETARIAN || meal.getDietType() == DietType.VEGAN)
-                    .collect(Collectors.toList());
-        }
 
         return meals.stream()
                 .filter(Objects::nonNull)
-                .filter(meal -> meal.getDietType().equals(diet))
+                .filter(meal -> meal.getDietType().compare(diet))
                 .collect(Collectors.toList());
     }
 
